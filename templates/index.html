@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/indexstyle.css') }}">
+    <title>CurdApp</title>
+</head>
+<body>
+    <div>
+        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+            <form method="post">
+                <label for="name">Name</label>
+                <input name="name" type="name">
+                <label for="id">ID</label>
+                <input name="id" type="number">
+                <label for="points">Points</label>
+                <input name="points" type="number">
+                <input class="table-button" type="submit" name="action" value="Search">
+            </form>
+        </div>
+        <div>
+            <table style="width:100%"> 
+                <tr> 
+                    <th>Name</th> 
+                    <th>ID</th> 
+                    <th>Points</th> 
+                </tr> 
+                {%for person in data%} 
+                <form method="post">
+                    <tr> 
+                        <td>
+                            <input type="name" name="name" value="{{person[0]}}" readonly>
+                        </td>
+                        <td>
+                            <input type="number" name="id" value="{{person[1]}}" readonly>
+                        </td>
+                        <td>
+                            <input type="number" name="points" value="{{person[2]}}" readonly>
+                        </td>
+                        <td>
+                            <input class="table-button" type="submit" name="action" value="Update">
+                        </td>
+                        <td>
+                            <input class="table-button" type="submit" name="action" value="Delete">
+                        </td>
+                    </tr>
+                </form>
+                {%endfor%} 
+                <form method="post">
+                    <tr>
+                        <td>
+                            <input class="add-input" type="name" name="name">
+                        </td>
+                        <td>
+                            <input class="add-input" type="number" name="id">
+                        </td>
+                        <td>
+                            <input class="add-input" type="number" name="points">
+                        </td>
+                        <td>
+                            <input class="table-button" type="submit" name="action" value="Add">
+                        </td>
+                        <td>
+    
+                        </td>
+                    </tr>
+                </form>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

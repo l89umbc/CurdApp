@@ -1,0 +1,35 @@
+body
+{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div
+{
+    font-size: 25px;
+}
+.input-holder
+{
+    display: grid;
+    justify-content: center;
+}
+label
+{
+    font-family: sans-serif;
+    font-weight: bold;
+}
+input
+{
+    font-size: 25px;
+
+    margin-top: 30px;
+}
+.table-button
+{
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #be57ce;
+    color: white;
+}
